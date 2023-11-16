@@ -3,16 +3,17 @@
 require 'uri'
 
 DATE_AND_USER_REGEX = /
-^
-\[([\-0-9\: ]+)\] # miasma of digits and separators
-\s*
-<([^>]+)> # nick
-/ix
+    ^
+    \[([\-0-9\: ]+)\] # miasma of digits and separators
+    \s*
+    <([^>]+)> # nick
+    /ix
 
 DISCORD_MEDIA_URL_REGEX = /https?:\/\/
     (media|cdn).
     discord(\w*).
-    (com|net)\//ix
+    (com|net)\/
+    /ix
 
 File.open(ARGV[0], "r") do |f|
     f.seek(0, IO::SEEK_END)

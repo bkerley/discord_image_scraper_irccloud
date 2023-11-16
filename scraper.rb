@@ -14,7 +14,6 @@ DISCORD_MEDIA_URL_REGEX = /https?:\/\/
     discord(\w*).
     (com|net)\//ix
 
-# open file from first argv argument
 File.open(ARGV[0], "r") do |f|
     f.seek(0, IO::SEEK_END)
     file_len = f.pos
